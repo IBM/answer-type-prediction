@@ -3,37 +3,46 @@ This repository has code for an answer type prediction system. The system was de
 
 ## Task Specification
 
-![Task Specification](images/task_specification.png)
+<!--- ![Task Specification](images/task_specification.png) --->
 
-### Examples
+<img src="images/task_specification.png" alt="Task Specification" height="250">
 
-![Examples](images/examples.png)
+## Examples
 
-## System Description
+<!--- ![Examples](images/examples.png) --->
+<img src="images/examples.png" alt="Examples" height="600">
 
-### Type Embeddings
+# System Description
+
+## Type Embeddings
 
 ![Type Embeddings](images/type_embeddings.png)
 
-### Model
+## Model
 
 ![Model](images/model.png)
 
-## Performance
+# Performance
 The table below summarizes the performance of both our models.
 
 ![Performance](images/performance.png)
 
-## Running the Code
-This repo has the source code for data processing, training and inference. Other resources like the training data, ontology, type embeddings, a presentation and a paper describing the system are present in the box folder. TODO: "provide a link to the box folder".
+## Our system achieved rank-2 on the SMART-2021 answer type prediction leaderboard
 
-### Environment Setup
+<!--- ![Leaderboard](images/leaderboard.png) --->
+
+<img src="images/leaderboard.png" alt="Leaderboard" height="500">
+
+# Running the Code
+This repo has the source code for data processing, training and inference. Other resources like the training data, ontology, type embeddings, a presentation and a paper describing the system are present in the box folder - https://ibm.box.com/s/y899hbjsazcx2jz6w65xyjerxqzdy4pn
+
+## Environment Setup
 Create a new conda environment from the given `atp_env.yml`
 ```commandline
 conda env create -f atp_env.yml
 ```
 
-### Training
+## Training
 ```commandline
 mkdir ./model
 
@@ -44,7 +53,7 @@ python train_biencoder_with_types.py --data_parallel --lowercase --training_set_
 
 After training, the prediction and performance on the given ``eval_set_paths`` are written to ``./model``.
 
-### Answer Type Prediction API
+## Answer Type Prediction API
 `./code/answer_type_prediction_api.py` provides an API to run inference with a pre-trained model. The main block of `./code/answer_type_prediction_api.py` demonstrates how the API should be used. The users can get a feel for the system by running it in an interactive mode as follows:
 
 ```commandline
